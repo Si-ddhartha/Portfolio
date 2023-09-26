@@ -1,0 +1,50 @@
+.article{
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    max-width: 25vw;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin: 0 2em;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 0.8s ease;
+}
+
+.article.scroll-up{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.article-about h2, p{
+    backdrop-filter: blur(4px);
+}
+
+.article-about h2{
+    color: #071952;
+}
+
+.article-about p{
+    color: #26577C;
+    padding-top: 12px;
+}
+
+.article-link{
+    margin-top: 1.5em;
+    padding: 10px;
+    transform: translateY(15px);
+    opacity: 0;
+    transition: all 0.8s ease-out;
+}
+
+.article-link i {
+    color: #0B666A;
+}
+
+.article:hover > .article-about{
+    filter: blur(2px);
+    cursor: pointer;
+}
+
+.article:hover > .article-link{
+    opacity: 1;
+    transform: translateY(0);
+}

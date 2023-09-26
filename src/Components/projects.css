@@ -1,0 +1,117 @@
+.card{
+    --h2-color-dark: #CAEDFF;
+    --h2-color-light: #2E4374;
+
+    --p-bg-dark: linear-gradient(90deg, rgba(202,237,255,1) 0%, rgba(202,237,255,0.8) 35%, rgba(202,237,255,0.5) 100%);
+    --p-bg-light: linear-gradient(90deg, rgba(46, 67, 116, 0.6) 0%, rgba(46, 67, 116, 0.5) 35%, rgba(46, 67, 116, 0.3) 100%);
+
+    --p-color-dark: #183A1D;
+    --p-color-light: #D2E0FB;
+
+    --icons-dark: aliceblue;
+    --icons-light: rgba(0, 0, 0, 0.8);
+
+    --icons-hover-dark: #B2FFFF;
+    --icons-hover-light: #4E9F3D;
+}
+
+.card{
+    max-width: 60vw;
+    display: flex;
+    padding: 4px;
+    margin-left: 20vw;
+    margin-bottom: 6em;
+    opacity: 0;
+    transform: translateX(-50%);
+    transition: all 0.5s ease;
+}
+
+.card.slide{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.card:nth-child(even){
+    transform: translateX(50%) scaleX(-1);
+}
+
+.card:nth-child(even).slide{
+    opacity: 1;
+    transform: translateX(0) scaleX(-1);
+}
+
+#dark .project-about h2{
+    color: var(--h2-color-dark);
+}
+
+#light .project-about h2{
+    color: var(--h2-color-light);
+}
+
+.project-about p{
+    transform: translateX(20px);
+    padding: 12px;
+    margin-top: 12px;
+    border-radius: 12px;
+}
+
+#dark .project-about p{
+    background: var(--p-bg-dark);
+    color: var(--p-color-dark);
+}
+
+#light .project-about p{
+    background: var(--p-bg-light);
+    color: var(--p-color-light);
+}
+
+.project-links{
+    max-width: fit-content;
+    padding: 4px;
+    margin-top: 10px;
+}
+
+.project-links a:first-child{
+    margin-right: 8px;
+}
+
+#dark .project-links  i{
+    color: var(--icons-dark);
+}
+
+#light .project-links  i{
+    color: var(--icons-light);
+}
+
+#dark .project-links  i:hover{
+    color: var(--icons-hover-dark);
+    -webkit-box-shadow: 0px 0px 50px 10px var(--icons-hover-dark); 
+    box-shadow: 0px 0px 50px 10px var(--icons-hover-dark);
+}
+
+#light .project-links  i:hover{
+    color: var(--icons-hover-light);
+    -webkit-box-shadow: 0px 0px 50px 10px var(--icons-hover-light); 
+    box-shadow: 0px 0px 50px 10px var(--icons-hover-light);
+}
+
+.project-image img{
+    height: 200px;
+    width: 300px;
+}
+
+.card:nth-child(even) .project-about{
+    transform: scaleX(-1);
+}
+
+.card:nth-child(even) .project-about h2{
+    text-align: end;
+}
+
+.card:nth-child(even) .project-about p{
+    transform: translateX(-20px);
+}
+
+.card:nth-child(even) .project-about .project-links{
+    margin-left: auto;
+}
