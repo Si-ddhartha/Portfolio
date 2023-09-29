@@ -1,10 +1,10 @@
 export const dataProjects = [
     {
-        title: 'Face Detection',
-        about: 'A face detection project implemented with TensorFlow. It employs deep learning, particularly convolutional neural networks (CNNs), to rapidly and accurately spot human face in images or video streams. The system excels in varying conditions and holds promise for applications like security and emotion recognition, and user authentication.',
-        github_link: 'https://github.com/Si-ddhartha/Face-Detection',
+        title: 'AniGAN: Anime Face Generator',
+        about: 'A TensorFlow implementation of a Generative Adversarial Network to generate anime faces. Through advanced deep-learning techniques, this project brings anime characters to life pixel by pixel. It additionally demonstrates the capacity of GANs in creating captivating, high-quality images and provides a foundation for further exploration and improvement.',
+        github_link: 'https://github.com/Si-ddhartha/AniGAN',
         live_link: '',
-        img_name: 'pr1.jpg',
+        img_name: 'pr1.png',
     },
 
     {
