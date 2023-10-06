@@ -212,6 +212,41 @@ nav{
     color: var(--icons-hover-light);
 }
 
+.resume{
+    font-family: 'Italiana', serif;
+    max-width: fit-content;
+    padding: 0.6rem;
+    margin-top: 16px;
+    margin-left: 45%;
+    border: none;
+    border-radius: 12px;
+    transition: all 2s ease-out;
+}
+
+#dark .resume{
+    background-color: #F5FEFD;
+    box-shadow: rgba(255, 255, 255, 0.7) 0px 3px 8px;
+}
+
+#light .resume{
+    background-color: #1A2421;
+    box-shadow: rgba(0, 0, 0, 0.8) 0px 3px 8px;
+}
+
+#dark .resume:active,
+#light .resume:active{
+    transform: translateY(8px);
+    box-shadow: none !important;
+}
+
+#dark .resume a{
+    color: black;
+}
+
+#light .resume a{
+    color: white;
+}
+
 hr{
     margin-top: 2rem;
     margin-left: 20vw;

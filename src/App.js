@@ -16,10 +16,13 @@ import { dataArticles } from './data/data-articles'
 import logo from './assests/boy.png'
 import modeIcon from './assests/day-and-night.png'
 
+import clickSound from './assests/click.wav'
+
 
 function App() {
-  const [theme, setTheme] = React.useState(localStorage.getItem('theme') || 'dark')
-  const [loading, setLoading] = React.useState(true)
+  const [theme, setTheme] = React.useState(localStorage.getItem('theme') || 'dark');
+  const [loading, setLoading] = React.useState(true);
+  const audioRef = React.useRef(null);
 
   const loaderStyle = {
     position: 'absolute',
@@ -34,6 +37,10 @@ function App() {
     maxWidth: '70px',
     cursor: 'pointer'
   }
+
+  const handleClick = () => {
+    audioRef.current.play();
+  };
 
   const projects = dataProjects.map(project => {
     return <Project project = {project} />
@@ -154,6 +161,11 @@ function App() {
             </a>
           </li>
         </ul>
+      </div>
+
+      <div className="resume" onClick={handleClick}>
+        <audio ref={audioRef} src={clickSound}></audio>
+        <a href="/Resume.pdf" download="Resume.pdf">Download Resume</a>
       </div>
 
       <hr />
