@@ -2,6 +2,7 @@ import React from "react";
 import './App.css';
 
 import Dog from "./Components/dog";
+import Experience from "./Components/experience";
 import Project from './Components/projects'
 import Article from "./Components/article";
 
@@ -16,13 +17,13 @@ import { dataArticles } from './data/data-articles'
 import logo from './assests/boy.png'
 import modeIcon from './assests/day-and-night.png'
 
-import clickSound from './assests/click.wav'
+// import clickSound from './assests/click.wav'
 
 
 function App() {
   const [theme, setTheme] = React.useState(localStorage.getItem('theme') || 'dark');
   const [loading, setLoading] = React.useState(true);
-  const audioRef = React.useRef(null);
+  // const audioRef = React.useRef(null);
 
   const loaderStyle = {
     position: 'absolute',
@@ -38,9 +39,9 @@ function App() {
     cursor: 'pointer'
   }
 
-  const handleClick = () => {
-    audioRef.current.play();
-  };
+  // const handleClick = () => {
+  //   audioRef.current.play();
+  // };
 
   const projects = dataProjects.map(project => {
     return <Project project = {project} />
@@ -86,6 +87,8 @@ function App() {
   React.useEffect(() => {
     const sliders = document.querySelectorAll('.card')
     const articles = document.querySelectorAll('.article')
+    const experience = document.querySelector('.experience')
+    const start = document.querySelector('.start')
 
     const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll){
       entries.forEach(entry => {
@@ -95,6 +98,7 @@ function App() {
         else{
           entry.target.classList.add('slide');
           entry.target.classList.add('scroll-up');
+          entry.target.classList.add('fade-in');
           appearOnScroll.unobserve(entry.target);
         }
       })
@@ -109,6 +113,9 @@ function App() {
     articles.forEach(article => {
       appearOnScroll.observe(article);
     })
+
+    appearOnScroll.observe(experience);
+    appearOnScroll.observe(start);
   }, [])
 
   return (
@@ -139,7 +146,7 @@ function App() {
       </div>
 
       <div className='about'>
-        <p>Greetings! I'm Aniket Dwivedi, an undergraduate student in the final year of my academic journey. I find my passion in the world of machine learning, and I've immersed myself in its captivating world. From understanding the intricacies of neural networks to experimenting with algorithms, I am endlessly fascinated by the world of machine learning. Python is my go-to language which helps bring my ideas to life. I'm also an enthusiast of aesthetics and love crafting visually appealing websites. I believe that a well-designed website can be a canvas for creativity, seamlessly integrating design and utility. Join me in exploring the fascinating world of machine learning, neural networks, and the endless possibilities they offer.
+        <p>Greetings! I'm Aniket Dwivedi, a recent graduate who has just concluded my academic journey. I find my passion in the world of <span style={{fontWeight: 'bold'}}> machine learning </span>, and I've immersed myself in its captivating world. From understanding the intricacies of <span style={{fontWeight: 'bold'}}>neural networks</span> to experimenting with algorithms, I am endlessly fascinated by the world of machine learning. <span style={{fontWeight: 'bold'}}>Python</span> is my go-to language which helps bring my ideas to life. I'm also an enthusiast of aesthetics and love <span style={{fontWeight: 'bold'}}>crafting visually appealing websites</span>. I believe that a well-designed website can be a canvas for creativity, seamlessly integrating design and utility. Join me in exploring the fascinating world of machine learning, neural networks, and the endless possibilities they offer.
         </p>
       </div>
 
@@ -156,19 +163,26 @@ function App() {
             </a>
           </li>
           <li>
-            <a href='https://medium.com/@aniket1.00111'>
+            <a href='https://medium.com/@aniket.py'>
               <i class="fa-brands fa-medium fa-2xl"></i>
             </a>
           </li>
         </ul>
       </div>
 
-      <div className="resume" onClick={handleClick}>
+      {/* <div className="resume" onClick={handleClick}>
         <audio ref={audioRef} src={clickSound}></audio>
         <a href="/Resume.pdf" download="Resume.pdf">Download Resume</a>
-      </div>
+      </div> */}
 
       <hr />
+
+      <div className="container-experience">
+        <h1>Experience</h1>
+        <div className="experience-list">
+          <Experience />
+        </div>
+      </div>
 
       <div className="container-projects">
         <h1>Projects</h1>

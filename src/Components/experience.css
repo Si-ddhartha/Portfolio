@@ -1,0 +1,168 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Press+Start+2P&display=swap');
+
+.experience{
+    display: flex;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 3s ease-in-out 1s;
+}
+
+.experience.fade-in{
+    opacity: 1;
+}
+
+.track{
+    display: flex;
+    margin-left: 35%;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+}
+
+.point{
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    transition: border 0.5s ease;
+}
+
+#dark .point{
+    border: 2px solid var(--nav-color-dark);
+}
+
+#light .point{
+    border: 2px solid var(--color-light);
+}
+
+.start{
+    position: relative;
+}
+
+.start::before{
+    content: '';
+    width: 2px;
+    height: 0;
+    position: absolute;
+    bottom: 17px;
+    left: 50%;
+    transition: height 3s ease-in-out 1s,
+                background-color 0.5s ease;
+}
+
+#dark .start::before{
+    background-color: var(--nav-color-dark);
+}
+
+#light .start::before{
+    background-color: var(--color-light);
+}
+
+.start.fade-in::before{
+    height: calc(60vh - 4em - 37px);
+}
+
+.start-button{
+    margin-top: auto;
+    margin-left: 30px;
+}
+
+.start-button > button{
+    position: relative;
+    top: 20px;
+    left: 12px;
+    background: #29AB87;
+    text-align: center;
+    font-size: 0.85em;
+    padding: 10px;
+    font-family: 'Press Start 2P', cursive;
+    text-decoration: none; 
+    color: white;
+    box-shadow: inset -4px -4px 0px 0px #004B49;
+
+    &:hover{
+        background: #00755E;
+        box-shadow: inset -(4px*1.5) -(4px*1.5) 0px 0px #004B49;
+    }
+
+    &:active {
+        box-shadow: inset 4px 4px 0px 0px #004B49;
+    }
+
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        box-sizing: content-box;
+    }
+
+    &:before {
+        top: -6px;
+        left: 0;
+        border-top: 6px black solid;
+        border-bottom: 6px black solid;
+    }
+
+    &:after {
+        left: -6px;
+        top: 0;
+        border-left: 6px black solid;
+        border-right: 6px black solid;
+    }
+
+    &[disabled]{
+        cursor: not-allowed;
+    }
+
+    &:not([disabled]){
+        cursor: pointer;
+    }
+}
+
+.experience-detail{
+    font-family: "Fredoka", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+    height: fit-content;
+    width: 35%;
+    opacity: 0;
+    transition: opacity 2s ease-in-out 2.4s;
+}
+
+.experience-detail.visible{
+    opacity: 1;
+}
+
+.info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.company-name > b{
+    font-weight: 600;
+    font-size: 1.5rem;
+    text-decoration: underline;
+}
+
+.duration{
+    padding-right: 1em;
+}
+
+.position{
+    font-size: 0.9rem;
+    padding-top: 0.5em;
+}
+
+.key-points{
+    margin-top: 0.8em;
+}
+
+.key-points > ul{
+    list-style-type: '⟣';
+    text-indent: 2px;
+}

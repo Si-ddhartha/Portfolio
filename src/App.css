@@ -31,7 +31,6 @@
 }
 
 *{
-    list-style: none;
     text-decoration: none;
     margin: 0;
     padding: 0;
@@ -161,7 +160,7 @@ nav{
     margin-left: 27%;
     opacity: 0;
     animation: fade-in 1.5s ease 0.5s forwards;
-    font-weight: bold;
+    /* font-weight: bold; */
     text-indent: 1.5em;
     line-height: 1.5;
     text-align: justify;
@@ -186,6 +185,7 @@ nav{
 
 .icons li{
     padding: 1rem;
+    list-style: none;
 }
 
 .icons i{
@@ -212,7 +212,7 @@ nav{
     color: var(--icons-hover-light);
 }
 
-.resume{
+/* .resume{
     font-family: 'Italiana', serif;
     max-width: fit-content;
     padding: 0.6rem;
@@ -245,12 +245,18 @@ nav{
 
 #light .resume a{
     color: white;
-}
+} */
 
 hr{
     margin-top: 2rem;
     margin-left: 20vw;
     width: 60vw;
+}
+
+.experience-list{
+    display: flex;
+    height: 60vh;
+    padding: 2em;
 }
 
 .container-projects{
@@ -263,6 +269,7 @@ hr{
     overflow-x: hidden;
 }
 
+.container-experience h1,
 .container-projects h1,
 .container-articles h1,
 .contact h1{
