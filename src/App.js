@@ -2,7 +2,8 @@ import React from "react";
 import './App.css';
 
 import Dog from "./Components/dog";
-import Experience from "./Components/experience";
+// import Experience from "./Components/experience";
+import Experience from "./Components/new-experience";
 import Project from './Components/projects'
 import Article from "./Components/article";
 
@@ -87,8 +88,7 @@ function App() {
   React.useEffect(() => {
     const sliders = document.querySelectorAll('.card')
     const articles = document.querySelectorAll('.article')
-    const experience = document.querySelector('.experience')
-    const start = document.querySelector('.start')
+    const experiences = document.querySelectorAll('.timeline-entry')
 
     const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll){
       entries.forEach(entry => {
@@ -114,8 +114,9 @@ function App() {
       appearOnScroll.observe(article);
     })
 
-    appearOnScroll.observe(experience);
-    appearOnScroll.observe(start);
+    experiences.forEach(experience => {
+      appearOnScroll.observe(experience);
+    })
   }, [])
 
   return (
@@ -142,11 +143,13 @@ function App() {
       </div>
 
       <div className='intro'>
-        <h2>Hello, I'm a student on a quest to unlock the magic of machine learning.</h2>
+        <h2>Hello, I'm an explorer on a quest to unlock the magic of machine learning.</h2>
       </div>
 
       <div className='about'>
-        <p>Greetings! I'm Aniket Dwivedi, a recent graduate who has just concluded my academic journey. I find my passion in the world of <span style={{fontWeight: 'bold'}}> machine learning </span>, and I've immersed myself in its captivating world. From understanding the intricacies of <span style={{fontWeight: 'bold'}}>neural networks</span> to experimenting with algorithms, I am endlessly fascinated by the world of machine learning. <span style={{fontWeight: 'bold'}}>Python</span> is my go-to language which helps bring my ideas to life. I'm also an enthusiast of aesthetics and love <span style={{fontWeight: 'bold'}}>crafting visually appealing websites</span>. I believe that a well-designed website can be a canvas for creativity, seamlessly integrating design and utility. Join me in exploring the fascinating world of machine learning, neural networks, and the endless possibilities they offer.
+        <p>Greetings! I'm Aniket Dwivedi, exploring the beauty and logic of machine learning. I find my passion in the world of <span style={{fontWeight: 'bold'}}> machine learning </span>, and I've immersed myself in its captivating world. From understanding the intricacies of <span style={{fontWeight: 'bold'}}>neural networks</span> to experimenting with algorithms, I am endlessly fascinated by the world of machine learning. 
+        <br></br>
+        <span style={{fontWeight: 'bold'}}>Python</span> is my go-to language which helps bring my ideas to life. I'm also an enthusiast of aesthetics and love <span style={{fontWeight: 'bold'}}>crafting visually appealing websites</span>. I believe that a well-designed website can be a canvas for creativity, seamlessly integrating design and utility. Join me in exploring the fascinating world of machine learning, neural networks, and the endless possibilities they offer.
         </p>
       </div>
 

@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Press+Start+2P&display=swap');
+
+.experience{
+    display: flex;
+}
+
+.timeline{
+    /* background-color: blue; */
+}
+
+.timeline-item{
+    position: relative;
+    padding-bottom: 2rem;
+}
+
+.circle{
+    margin-left: 45vw;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.line{
+    position: absolute;
+    margin-left: 45vw;
+    width: 2px;
+    height: 100%;
+    transform: translate(4px, 0);
+}
+
+#dark .circle,
+#dark .line{
+    background-color: var(--nav-color-dark);
+}
+
+#light .circle,
+#light .line{
+    background-color: var(--nav-color-light);
+}
+
+.timeline-entry{
+    height: fit-content;
+    max-width: 35%;
+    display: flex;
+    flex-direction: column;
+    font-family: "Fredoka", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+    opacity: 0;
+    transition: opacity 2s ease-in-out 1s;
+}
+
+.timeline-entry.fade-in{
+    opacity: 1;
+}
+
+.right{
+    margin-left: 47vw;
+}
+
+.left{
+    margin-left: 15vw;
+    margin-right: 50vw;
+}
+
+.info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.company-name > b{
+    font-weight: 600;
+    font-size: 1.5rem;
+    text-decoration: underline;
+}
+
+.duration{
+    padding-right: 1em;
+}
+
+.position{
+    font-size: 0.9rem;
+    padding-top: 0.5em;
+}
+
+.keypoints{
+    margin-top: 0.8em;
+}
+
+.keypoints > ul{
+    list-style-type: '⟣';
+    text-indent: 2px;
+}
+
+.keypoints > ul li{
+    margin-bottom: 1rem;
+}
