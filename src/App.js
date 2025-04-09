@@ -143,7 +143,7 @@ function App() {
       </div>
 
       <div className='intro'>
-        <h2>Hello, I'm an explorer on a quest to unlock the magic of machine learning.</h2>
+        <h2>Hello, I'm just a soul in search of meaning, mischief, and moments of magic.</h2>
       </div>
 
       <div className='about'>
