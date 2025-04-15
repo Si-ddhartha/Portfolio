@@ -10,7 +10,7 @@ const experienceData = [
         keyPoints: [
             {
                 title: "",
-                description: "Gaining hands-on experience in SAP, with a focus on SAP IS-U billing and invoicing processes, as well as sales processes."
+                description: "Gaining hands-on experience in enterprise-level billing and invoicing systems, with a focus on analyzing process-level breakdowns, understanding system logic and data flows, performing configuration-driven troubleshooting, and contributing to the accuracy and efficiency of business-critical operations."
             },
         ]
     },
